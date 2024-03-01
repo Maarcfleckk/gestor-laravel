@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Afegir Nous Productes</h1>
 </body>
 </html>
