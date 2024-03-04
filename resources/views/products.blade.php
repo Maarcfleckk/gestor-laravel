@@ -7,5 +7,11 @@
 </head>
 <body>
     <h1>Llista de Productes</h1>
+    @foreach ($productes as $producte)
+        <h2>{{ $producte->nom }}</h2>
+        <p>{{ $producte->descripcio }}</p>
+        <p>{{ $producte->preu }} €</p>
+        <p>Estoc: {{ $producte->estoc }}</p>
+    @endforeach
 </body>
 </html>
