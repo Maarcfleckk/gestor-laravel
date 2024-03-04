@@ -10,7 +10,8 @@
 <body>
     <div class="container">
         <h1>Afegir Nou Producte</h1>
-        <form action="insertar_producto.php" method="post">
+        <form action="{{route('store') }}" method="post">
+            @csrf
             <div>
                 <label for="nombre">Nom:</label>
                 <input type="text" id="nombre" name="nombre" required>

@@ -28,48 +28,47 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    $request->validate([
-        'nom' => 'required',
-        'descripcio' => 'required',
-        'preu' => 'required|numeric',
-        'estoc' => 'required|numeric'
-    ]);
+    {
+        // Validate the request...
+        Producte::create([
+            'nom' => $request->input('nombre'),
+            'descripcio' => $request->input('descripcion'),
+            'preu' => $request->input('precio'),
+            'estoc' => $request->input('stock')
+        ]);
 
-    Producte::create($request->all());
+        return redirect()->route('')
+            ->with('success', 'Producto creado exitosamente.');
+    }
 
-    return redirect()->route('products.index')
-                     ->with('success', 'Producto creado exitosamente.');
-}
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'nom' => 'required',
+            'descripcio' => 'required',
+            'preu' => 'required|numeric',
+            'estoc' => 'required|numeric'
+        ]);
 
-/**
- * Update the specified resource in storage.
- */
-public function update(Request $request, string $id)
-{
-    $request->validate([
-        'nom' => 'required',
-        'descripcio' => 'required',
-        'preu' => 'required|numeric',
-        'estoc' => 'required|numeric'
-    ]);
+        $producte = Producte::find($id);
+        $producte->update($request->all());
 
-    $producte = Producte::find($id);
-    $producte->update($request->all());
+        return redirect()->route('products.index')
+            ->with('success', 'Producto actualizado exitosamente.');
+    }
 
-    return redirect()->route('products.index')
-                     ->with('success', 'Producto actualizado exitosamente.');
-}
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $producte = Producte::find($id);
+        $producte->delete();
 
-/**
- * Remove the specified resource from storage.
- */
-public function destroy(string $id)
-{
-    $producte = Producte::find($id);
-    $producte->delete();
-
-    return redirect()->route('products.index')
-                     ->with('success', 'Producto eliminado exitosamente.');
-}
+        return redirect()->route('products.index')
+            ->with('success', 'Producto eliminado exitosamente.');
+    }
 }
