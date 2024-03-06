@@ -29,17 +29,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the request...
+        // Validar el request
+        $validated = $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+            'descripcion' => ['required', 'string'],
+            'precio' => ['required', 'numeric', 'min:0'],
+            'stock' => ['required', 'integer', 'min:0'],
+        ]);
         Producte::create([
-            'nom' => $request->input('nombre'),
-            'descripcio' => $request->input('descripcion'),
-            'preu' => $request->input('precio'),
-            'estoc' => $request->input('stock')
+            'nom' => $validated['nombre'],
+            'descripcio' => $validated['descripcion'],
+            'preu' => $validated['precio'],
+            'estoc' => $validated['stock']
         ]);
 
-        return redirect()->route('')
-            ->with('success', 'Producto creado exitosamente.');
+        return redirect('productes');
     }
+
 
     /**
      * Update the specified resource in storage.

@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Afegir Nou Producte</h1>
-        <form action="{{route('store') }}" method="post">
+        <form action="{{route('store')}}" method="post">
             @csrf
             <div>
                 <label for="nombre">Nom:</label>
