@@ -12,8 +12,9 @@
         <p>{{ $producte->descripcio }}</p>
         <p>{{ $producte->preu }} €</p>
         <p>Estoc: {{ $producte->estoc }}</p>
-        <button>Eliminar</button>
-        <button>Modificar</button>
+        <a href="productes/?{{ $producte }}">Veure més</a>
+        <a href="">Editar</a>
+        <a href="">Eliminar</a>
     @endforeach
 </body>
 </html>

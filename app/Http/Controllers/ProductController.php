@@ -77,4 +77,10 @@ class ProductController extends Controller
         return redirect()->route('products.index')
             ->with('success', 'Producto eliminado exitosamente.');
     }
+
+    public function show(string $id)
+    {
+        $producte = Producte::find($id);
+        return view('products-details/$id', ['producte' => $producte]);
+    }
 }
