@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Detalls del Producte</h1>
+    @csrf
+    <h1>Ok</h1>
+    <p>La operacion ha ido exitosa</p>
 </body>
 </html>
