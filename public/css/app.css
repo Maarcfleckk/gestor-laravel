@@ -2,55 +2,220 @@ body {
     background-color: #373636; /* Fondo azul marino */
     color: white;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.agregar {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    top: 8%;
+    position: absolute;
+    right: 23.5%;
+}
+
+.product {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    position: relative;
+}
+
+.product .product-info {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+}
+
+.product .product-image {
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    height: 100px;
+    width: 100px;
+}
+
+.product .product-description {
+    flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.product button {
+    background-color: red; /* Rojo */
+    border: none;
+    color: white;
+    padding: 8px 16px;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-direction: row;
+    display: flex;
+    gap: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Verde más oscuro */
 }
 
 header {
     padding: 10px;
     width: 80%;
     margin: 0 auto;
-  }
-  
-  .menu {
+}
+
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .title {
+}
+
+.title {
     font-weight: bold;
     font-size: 32px;
-  }
-  
-  .menu-items ul {
+}
+
+.menu-items ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .menu-items li {
+}
+
+.menu-items li {
     display: inline-block;
     margin-right: 10px;
     font-size: 24px;
     margin: 20px;
-  }
-  
-  .menu-items li a {
+}
+
+.menu-items li a {
     text-decoration: none;
     color: white !important;
-  }
-  
-  .product-section {
+}
+
+.product-section {
     width: 80%;
     margin: 0 auto; /* Centra horizontalmente */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .product {
-    width: 48%; /* Para que haya espacio para el margen entre las columnas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.product {
     margin-bottom: 20px;
-    background-color: white !important;
+    background-color: #C6C6C4 !important;
     border-radius: 10px;
     color: black !important;
-  }
+    padding: 10px;
+}
+
+.nom {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.preu {
+    color: green !important;
+}
+
+.veure {
+    background-color: green; /* Rojo */
+    border: none;
+    color: white;
+    padding: 8px 16px;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 16%;
+    flex-direction: row;
+    display: flex;
+    gap: 5px;
+}
+
+.veure img {
+    width: 20px;
+    height: 20px;
+}
+
+.editar img {
+    width: 20px;
+    height: 20px;
+}
+
+.editar {
+    background-color: rgb(102, 102, 247); /* Rojo */
+    border: none;
+    color: white;
+    padding: 8px 16px;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 16%;
+    flex-direction: row;
+    display: flex;
+    gap: 5px;
+}
+
+.eliminar img {
+    width: 20px;
+    height: 20px;
+}
+
+.buttonContainer {
+    
+    display: flex;
+    width: 100%;
+}
