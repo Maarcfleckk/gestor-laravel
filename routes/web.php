@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Producte;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function(){
-    return view('productes');
+    $productes = Producte::all();
+    return view('products', ['productes' => $productes]);
 });
 
 Route::resource('productes', ProductController::class);
