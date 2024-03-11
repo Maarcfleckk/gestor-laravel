@@ -38,3 +38,19 @@ header {
     text-decoration: none;
     color: white !important;
   }
+  
+  .product-section {
+    width: 80%;
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .product {
+    width: 48%; /* Para que haya espacio para el margen entre las columnas */
+    margin-bottom: 20px;
+    background-color: white !important;
+    border-radius: 10px;
+    color: black !important;
+  }

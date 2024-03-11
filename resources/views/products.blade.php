@@ -21,21 +21,23 @@
     </div>
     <hr>
   </header>
-    @foreach ($productes as $producte)
-        <div id="item{{$producte->id}}" class="product">
-            <h2>{{ $producte->nom }}</h2>
-            <p>{{ $producte->descripcio }}</p>
-            <p>{{ $producte->preu }} €</p>
-            <p>Estoc: {{ $producte->estoc }}</p>
-            <!-- <a href=" route("productes.show", ["id" => $producte->id]) }}">Ver más</a> -->
-            <!-- <a href=" route("productes.edit", ["id" => $producte->id]) }}">Editar</a> -->
-            <form method="POST" action="{{ route('productes.destroy', ['id' => $producte->id]) }}" style="display: inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
-            </form>
-        </div>
-    @endforeach
+  <section class="product-section">
+  @foreach ($productes as $producte)
+    <div id="item{{$producte->id}}" class="product">
+      <h2>{{ $producte->nom }}</h2>
+      <p>{{ $producte->descripcio }}</p>
+      <p>{{ $producte->preu }} €</p>
+      <p>Estoc: {{ $producte->estoc }}</p>
+      <a href="productes/?{{ $producte }}">Veure més</a>
+      <a href="">Editar</a>
+      <form method="POST" action="{{ route('productes.destroy', ['id' => $producte->id]) }}" style="display: inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+      </form>
+    </div>
+  @endforeach
+</section>
     <a href="{{ asset('css/app.css')}}"></a>
 </body>
 </html>
