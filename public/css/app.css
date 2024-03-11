@@ -2,6 +2,39 @@ body {
     background-color: #373636; /* Fondo azul marino */
     color: white;
     font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 32px;
+  }
+  
+  .menu-items ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-}
+  }
+  
+  .menu-items li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    margin: 20px;
+  }
+  
+  .menu-items li a {
+    text-decoration: none;
+    color: white !important;
+  }

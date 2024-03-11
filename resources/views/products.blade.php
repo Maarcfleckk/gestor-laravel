@@ -8,13 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Llista de Productes</h1>
-    <ul>
-        <li>Tienda</li>
-        <li>Filtrar</li>
-        <li>Carrito</li>
-    </ul>
+<header>
+    <div class="menu">
+      <div class="title">Gestor de Productos</div>
+      <div class="menu-items">
+        <ul>
+          <li><a href="#">Tienda</a></li>
+          <li><a href="#">Filtrar</a></li>
+          <li><a href="#">Crear</a></li>
+        </ul>
+      </div>
+    </div>
     <hr>
+  </header>
     @foreach ($productes as $producte)
         <div id="item{{$producte->id}}" class="product">
             <h2>{{ $producte->nom }}</h2>
