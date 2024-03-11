@@ -93,7 +93,14 @@ class ProductController extends Controller
         // Encontrar el producto por su ID
         $producte = Producte::findOrFail($id);
 
-        return view('show-product', ['producte' => $producte]);
+        return view('product-details', ['producte' => $producte]);
+    }
+    public function edit(string $id)
+    {
+        // Encontrar el producto por su ID
+        $producte = Producte::findOrFail($id);
+
+        return view('edit-product', ['producte' => $producte]);
     }
 
 }
