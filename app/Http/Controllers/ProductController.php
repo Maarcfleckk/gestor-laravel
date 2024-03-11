@@ -50,37 +50,69 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-       $validated = $request->validate([
-            'nombre' => ['required', 'string', 'max:255'],
-            'descripcion' => ['required', 'string'],
-            'precio' => ['required', 'numeric', 'min:0'],
-            'stock' => ['required', 'integer', 'min:0'],
-        ]);
+    public function update(Request $request, $id)
+{
+    // Validar el request
+    $validated = $request->validate([
+        'nombre' => ['required', 'string', 'max:255'],
+        'descripcion' => ['required', 'string'],
+        'precio' => ['required', 'numeric', 'min:0'],
+        'stock' => ['required', 'integer', 'min:0'],
+    ]);
 
-        $producte = Producte::find($id);
-        $producte->update($request->all());
+    // Buscar el producto por ID
+    $producte = Producte::find($id);
 
-        return redirect()->route('products.index')
-            ->with('success', 'Producto actualizado exitosamente.');
+    // Verificar si el producto existe
+    if (!$producte) {
+        abort(404, 'Producto no encontrado');
     }
+
+    // Actualizar los datos del producto
+    $producte->update([
+        'nom' => $validated['nombre'],
+        'descripcio' => $validated['descripcion'],
+        'preu' => $validated['precio'],
+        'estoc' => $validated['stock']
+    ]);
+
+    return redirect('productes')->with('success', 'Producto actualizado correctamente');
+}
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        $producte = Producte::find($id);
-        $producte->delete();
+    /**
+ * Remove the specified resource from storage.
+ */
+public function destroy(string $id)
+{
+    $producte = Producte::find($id);
 
-        return redirect()->route('products.index')
-            ->with('success', 'Producto eliminado exitosamente.');
+    // Verificar si el producto existe
+    if (!$producte) {
+        abort(404, 'Producto no encontrado');
     }
 
-    public function show(string $id)
-    {
-        $producte = Producte::find($id);
-        return view('products-details/$id', ['producte' => $producte]);
+    $producte->delete();
+
+    return redirect()->route('')
+        ->with('success', 'Producto eliminado exitosamente.');
+}
+
+/**
+ * Display the specified resource.
+ */
+public function show(string $id)
+{
+    $producte = Producte::find($id);
+
+    // Verificar si el producto existe
+    if (!$producte) {
+        abort(404, 'Producto no encontrado');
     }
+
+    return view('products-details', ['producte' => $producte]);
+}
+
 }
