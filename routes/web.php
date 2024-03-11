@@ -28,3 +28,8 @@ Route::resource('productes', ProductController::class);
 Route::get('create', [ProductController::class, 'create']);
 Route::post('store', [ProductController::class, 'store'])->name('store');
 Route::get('productes/{id}', [ProductController::class, 'show']);
+// ... Rutas existentes
+
+Route::get('productes/{id}/edit', [ProductController::class, 'edit'])->name('productes.edit');
+Route::put('productes/{id}', [ProductController::class, 'update'])->name('productes.update');
+Route::delete('productes/{id}', [ProductController::class, 'destroy'])->name('productes.destroy');
