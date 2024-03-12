@@ -40,8 +40,8 @@
                 <label for="stock">Stock:</label>
                 <input type="number" id="stock" name="stock" min="0" required>
             </div>
-            <div>
-                <label for="imagen">Imatge:</label>
+            <div class="file-upload">
+                <label for="imagen" class="file-label">Seleccionar Imagen</label>
                 <input type="file" id="imagen" name="imagen" accept="image/*" required>
             </div>
             <input type="submit" value="Añadir Producto">
