@@ -10,7 +10,7 @@
 <body>
   <header>
       <div class="menu">
-          <div class="title"><h1>Gestor de Productos</h1></div>
+          <div class="title"><a href=""><h1>Gestor de Productos</h1></a></div>
           <div class="menu-items">
               <ul>
                   <li><a href="{{ route('productes.index') }}">Tienda</a></li>
@@ -20,20 +20,35 @@
       </div>
       <hr>
   </header>
-  <section class="product-section">
-    <div id="item{{$producte->id}}" class="product">
-      <h2>{{ $producte->nom }}</h2>
-      <p>{{ $producte->descripcio }}</p>
-      <p>{{ $producte->preu }} €</p>
-      <p>Estoc: {{ $producte->estoc }}</p>
-      <a class="editar" href="{{ route('productes.edit', ['id' => $producte->id]) }}">Editar</a>
-      <form method="POST" action="{{ route('productes.destroy', ['id' => $producte->id]) }}" style="display: inline;">
-        @csrf
-        @method('DELETE')
-        <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
-      </form>
-    </div>
-</section>
+  <main>
+    <section class="productContainer">
+      <section class="productInfo">
+        <div class="productTitle">
+          <h2>{{ $producte->nom }}</h2>
+        </div>
+        <div class="productDescription">
+          <p>{{ $producte->descripcio }}</p>
+        </div>
+        <div class="productPrice">
+          <p>{{ $producte->preu }} €</p>
+        </div>
+        <div class="productStock">
+          <p>Estoc: {{ $producte->estoc }}</p>
+        </div>
+        <div class="productButtons">
+          <a class="editar" href="{{ route('productes.edit', ['id' => $producte->id]) }}">Editar</a>
+          <form method="POST" action="{{ route('productes.destroy', ['id' => $producte->id]) }}" style="display: inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+          </form>
+        </div>
+      </section>
+      <section class="productImage">
+        <img src="" alt="">
+      </section>
+    </section>
+  </main>
     <a href="{{ asset('css/app.css')}}"></a>
 </body>
 </html>
