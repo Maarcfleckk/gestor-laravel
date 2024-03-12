@@ -23,7 +23,7 @@
     <main>
         <h2>Editar Producto</h2>
     
-        <form method="POST" action="{{ route('productes.update', ['id' => $producte->id]) }}">
+        <form method="POST" action="{{ route('productes.update', ['id' => $producte->id]) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
     
@@ -38,6 +38,9 @@
     
             <label for="stock">Stock:</label>
             <input type="number" name="stock" value="{{ $producte->estoc }}" required>
+    
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen">
     
             <button type="submit">Actualizar Producto</button>
         </form>

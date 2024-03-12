@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         // Guardar la imagen en el servidor
         $imagenNombre = $request->file('imagen')->getClientOriginalName(); // Obtener el nombre de la imagen
-        $request->file('imagen')->storeAs('public/images', $imagenNombre); // Guardar la imagen en storage/app/public/images
+        $request->file('imagen')->storeAs('storage/app/public/images', $imagenNombre); // Guardar la imagen en storage/app/public/images
 
         // Crear el producto en la base de datos junto con la ruta de la imagen
         Producte::create([
@@ -48,7 +48,7 @@ class ProductController extends Controller
             'descripcio' => $validated['descripcion'],
             'preu' => $validated['precio'],
             'estoc' => $validated['stock'],
-            'imagen' => 'images/' . $imagenNombre
+            'imagen' => '../images/' . $imagenNombre
         ]);
 
         return redirect('productes');
