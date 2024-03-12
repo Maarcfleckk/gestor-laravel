@@ -8,18 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-<header>
-    <div class="menu">
-      <div class="title">Gestor de Productos</div>
-      <div class="menu-items">
-        <ul>
-          <li><a href="#">Tienda</a></li>
-          <li><a href="#">Filtrar</a></li>
-          <li><a href="#">Crear</a></li>
-        </ul>
+  <header>
+      <div class="menu">
+          <div class="title"><h1>Gestor de Productos</h1></div>
+          <div class="menu-items">
+              <ul>
+                  <li><a href="{{ route('productes.index') }}">Tienda</a></li>
+                  <li><a href="{{ route('productes.create') }}">Crear</a></li>
+              </ul>
+          </div>
       </div>
-    </div>
-    <hr>
+      <hr>
   </header>
   <section class="product-section">
     <div id="item{{$producte->id}}" class="product">

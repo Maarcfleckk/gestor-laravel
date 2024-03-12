@@ -8,8 +8,20 @@
     <title>Afegir producte</title>
 </head>
 <body>
+    <header>
+        <div class="menu">
+            <div class="title"><h1>Gestor de Productos</h1></div>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="{{ route('productes.index') }}">Tienda</a></li>
+                    <li><a href="{{ route('productes.create') }}">Crear</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </header>
     <div class="container">
-        <h1>Afegir Nou Producte</h1>
+        <h2>Afegir Nou Producte</h2>
         <form action="{{route('store')}}" method="post">
             @csrf
             <div>
