@@ -118,8 +118,15 @@ header {
 .title {
     font-weight: bold;
     font-size: 32px;
+    color: white !important;
+}
+.title a{
+    text-decoration: none;
 }
 
+.title h1 {
+    color: white !important;
+}
 .menu-items ul {
     list-style-type: none;
     margin: 0;
@@ -218,4 +225,22 @@ header {
     
     display: flex;
     width: 100%;
+}
+
+.eliminar {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 16px;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 16%;
+    flex-direction: row;
+    display: flex;
+    gap: 5px;
 }
