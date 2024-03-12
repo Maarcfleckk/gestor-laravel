@@ -21,7 +21,7 @@ use App\Models\Producte;
 
 Route::get('/', function(){
     $productes = Producte::all();
-    return view('products', ['productes' => $productes]);
+    return view('home');
 });
 
 Route::resource('productes', ProductController::class);
