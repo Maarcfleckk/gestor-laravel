@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="menu">
-            <div class="title"><a href=""><h1>Gestor de Productos</h1></a></div>
+            <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
             <div class="menu-items">
                 <ul>
                     <li><a href="{{ route('productes.index') }}">Tienda</a></li>

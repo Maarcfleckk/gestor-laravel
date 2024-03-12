@@ -19,7 +19,7 @@ h1 {
 }
 
 .agregar {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4caf50; /* Verde */
     border: none;
     color: white;
     padding: 8px 16px;
@@ -62,7 +62,7 @@ h1 {
     background-color: red; /* Rojo */
     border: none;
     color: white;
-    padding: 8px 16px;  
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -87,7 +87,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4caf50; /* Verde */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -115,12 +115,12 @@ header {
     align-items: center;
 }
 
-.title {
+.title h1 {
     font-weight: bold;
     font-size: 32px;
     color: white !important;
 }
-.title a{
+.title a {
     text-decoration: none;
 }
 
@@ -155,7 +155,7 @@ header {
 
 .product {
     margin-bottom: 20px;
-    background-color: #C6C6C4 !important;
+    background-color: #c6c6c4 !important;
     border-radius: 10px;
     color: black !important;
     padding: 10px;
@@ -174,7 +174,7 @@ header {
     background-color: green; /* Rojo */
     border: none;
     color: white;
-    padding: 8px 16px;  
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -202,7 +202,7 @@ header {
     background-color: rgb(102, 102, 247); /* Rojo */
     border: none;
     color: white;
-    padding: 8px 16px;  
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -222,7 +222,6 @@ header {
 }
 
 .buttonContainer {
-    
     display: flex;
     width: 100%;
 }
@@ -231,7 +230,7 @@ header {
     background-color: red;
     border: none;
     color: white;
-    padding: 8px 16px;  
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

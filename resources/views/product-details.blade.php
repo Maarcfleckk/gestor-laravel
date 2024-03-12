@@ -10,7 +10,7 @@
 <body>
   <header>
       <div class="menu">
-          <div class="title"><a href=""><h1>Gestor de Productos</h1></a></div>
+          <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
           <div class="menu-items">
               <ul>
                   <li><a href="{{ route('productes.index') }}">Tienda</a></li>
@@ -36,16 +36,20 @@
           <p>Estoc: {{ $producte->estoc }}</p>
         </div>
         <div class="productButtons">
-          <a class="editar" href="{{ route('productes.edit', ['id' => $producte->id]) }}">Editar</a>
+          <a class="editar" href="{{ route('productes.edit', ['id' => $producte->id]) }}">
+            <img src="{{ asset('/images/pencil-solid.svg')}}" alt="Icono de lapiz">Editar
+          </a>
           <form method="POST" action="{{ route('productes.destroy', ['id' => $producte->id]) }}" style="display: inline;">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+            <button type="submit" class="eliminar" onclick="return confirm('Segur que vols eliminar aquest producte?')">
+              <img src="{{ asset('/images/trash-regular.svg')}}" alt="Icono de lapiz">Eliminar
+            </button>
           </form>
         </div>
       </section>
       <section class="productImage">
-        <img src="" alt="">
+        <img src="{{ asset($producte->imagen) }}" alt="Imagen del producto">
       </section>
     </section>
   </main>

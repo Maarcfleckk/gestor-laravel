@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="menu">
-            <div class="title"><a href=""><h1>Gestor de Productos</h1></a></div>
+            <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
             <div class="menu-items">
                 <ul>
                     <li><a href="{{ route('productes.index') }}">Tienda</a></li>
@@ -30,6 +30,7 @@
             <p class="preu">Preu: {{ $producte->preu }} €</p>
             <p class="estock">Estoc: {{ $producte->estoc }}</p>
             <div class="buttonContainer">
+                <img src="{{ asset($producte->imagen) }}" alt="Imagen del producto"> <!-- Mostrar la imagen del producto -->
                 <a class="veure" href="{{ route('productes.show', ['producte' => $producte->id]) }}">
                     <img src="{{ asset('/images/eye-solid.svg')}}" alt="Icono de ojo">Veure més
                 </a>

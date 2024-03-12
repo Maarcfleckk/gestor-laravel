@@ -10,5 +10,5 @@ class Producte extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'productes';
-    protected $fillable = ['id','nom', 'descripcio', 'preu', 'estoc'];
+    protected $fillable = ['id', 'nom', 'descripcio', 'preu', 'estoc', 'imagen'];
 }

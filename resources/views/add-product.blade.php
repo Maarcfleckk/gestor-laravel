@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="menu">
-            <div class="title"><a href=""><h1>Gestor de Productos</h1></a></div>
+            <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
             <div class="menu-items">
                 <ul>
                     <li><a href="{{ route('productes.index') }}">Tienda</a></li>
@@ -22,7 +22,7 @@
     </header>
     <div class="container">
         <h2>Afegir Nou Producte</h2>
-        <form action="{{route('store')}}" method="post">
+        <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="nombre">Nom:</label>
@@ -39,6 +39,10 @@
             <div>
                 <label for="stock">Stock:</label>
                 <input type="number" id="stock" name="stock" min="0" required>
+            </div>
+            <div>
+                <label for="imagen">Imatge:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
             </div>
             <input type="submit" value="Añadir Producto">
         </form>

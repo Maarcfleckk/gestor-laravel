@@ -35,12 +35,20 @@ class ProductController extends Controller
             'descripcion' => ['required', 'string'],
             'precio' => ['required', 'numeric', 'min:0'],
             'stock' => ['required', 'integer', 'min:0'],
+            'imagen' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'], // Validación de la imagen
         ]);
+
+        // Guardar la imagen en el servidor
+        $imagenNombre = $request->file('imagen')->getClientOriginalName(); // Obtener el nombre de la imagen
+        $request->file('imagen')->storeAs('public/images', $imagenNombre); // Guardar la imagen en storage/app/public/images
+
+        // Crear el producto en la base de datos junto con la ruta de la imagen
         Producte::create([
             'nom' => $validated['nombre'],
             'descripcio' => $validated['descripcion'],
             'preu' => $validated['precio'],
-            'estoc' => $validated['stock']
+            'estoc' => $validated['stock'],
+            'imagen' => 'images/' . $imagenNombre
         ]);
 
         return redirect('productes');
