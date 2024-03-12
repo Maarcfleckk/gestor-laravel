@@ -48,8 +48,8 @@
           </form>
         </div>
       </section>
-      <section class="productImage">
-        <img src="{{ asset($producte->imagen) }}" alt="Imagen del producto">
+      <section class="productImage">            
+        <img src="{{ asset('storage/'.$producte->imagen.'') }}" alt="Imagen del producto"> <!-- Mostrar la imagen del producto -->
       </section>
     </section>
   </main>
