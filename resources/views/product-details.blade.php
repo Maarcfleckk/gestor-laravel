@@ -9,17 +9,16 @@
 </head>
 <body>
   <header>
-      <div class="menu">
-          <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
-          <div class="menu-items">
-              <ul>
-                  <li><a href="{{ route('productes.index') }}">Tienda</a></li>
-                  <li><a href="{{ route('productes.create') }}">Crear</a></li>
-              </ul>
-          </div>
-      </div>
-      <hr>
-  </header>
+        <div class="headerContainer">
+            <nav class="navBar">
+                <ul class="navBarList">
+                    <li class="listItem"><a href="{{ route('productes.index') }}">Productes</a></li>
+                    <li class="listItem"><a href="{{ url('/') }}"><h1 class="title">Inici</h1></a></li>
+                    <li class="listItem"><a href="{{ route('productes.create') }}">Afegir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
   <main>
     <section class="productContainer">
       <section class="productInfo">

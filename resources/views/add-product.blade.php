@@ -8,7 +8,7 @@
     <title>Afegir producte</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="menu">
             <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
             <div class="menu-items">
@@ -19,6 +19,17 @@
             </div>
         </div>
         <hr>
+    </header> -->
+    <header>
+        <div class="headerContainer">
+            <nav class="navBar">
+                <ul class="navBarList">
+                    <li class="listItem"><a href="{{ route('productes.index') }}">Productes</a></li>
+                    <li class="listItem"><a href="{{ url('/') }}"><h1 class="title">Inici</h1></a></li>
+                    <li class="listItem"><a href="{{ route('productes.create') }}">Afegir</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <h2>Afegir Nou Producte</h2>
