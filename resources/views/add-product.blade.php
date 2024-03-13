@@ -8,18 +8,6 @@
     <title>Afegir producte</title>
 </head>
 <body>
-    <!-- <header>
-        <div class="menu">
-            <div class="title"><a href="{{ url('/') }}"><h1>Gestor de Productos</h1></a></div>
-            <div class="menu-items">
-                <ul>
-                    <li><a href="{{ route('productes.index') }}">Tienda</a></li>
-                    <li><a href="{{ route('productes.create') }}">Crear</a></li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-    </header> -->
     <header>
         <div class="headerContainer">
             <nav class="navBar">
@@ -33,7 +21,7 @@
     </header>
     <div class="container">
         <h2>Afegir Nou Producte</h2>
-        <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('store') }}" method="post" enctype="multipart/form-data" class="form-add">
             @csrf
             <div>
                 <label for="nombre">Nom:</label>

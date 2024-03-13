@@ -1,261 +1,242 @@
-body {
-    background-color: #373636; /* Fondo azul marino */
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+    body {
+        background-color: #373636; /* Fondo azul marino */
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-/* HEADER */
+    /* HEADER */
 
-header {
-    width: 100%;
-    background-color: rgb(255 255 255 / 10%);
-}
-.headerContainer {
-    width: 80%;
-    margin: 0 auto;
-}
-.navBarList {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 70px;
-}
-.listItem {
-    margin: 0 20px;
-}
-.listItem a {
-    text-decoration: none;
-    color: #fff;
-    padding-bottom: 5px;
-    font-size: 20px;
-    transition: all 1s ease-in-out;
-}
-.listItem a:hover {
-    text-decoration: underline;
-}
-.listItem .title {
-    font-size: 20px;
-    font-weight: normal;
-}
-/* header {
-    padding: 10px;
-    width: 80%;
-    margin: 0 auto;
-}
+    header {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+        padding: 10px 0;
+    }
+    .headerContainer {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .navBarList {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 50px;
+        padding: 0px;
+    }
+    .listItem {
+        margin: 0 20px;
+    }
+    .listItem a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+    }
+    .listItem a:hover {
+        text-decoration: underline;
+    }
+    .listItem .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /* FI HEADER */
 
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    /* LLISTAT PRODUCTES */
+    .product-section {
+        width: 75%;
+        margin: 0 auto;
+    }
 
-.title h1 {
-    font-weight: bold;
-    font-size: 32px;
-    color: white !important;
-}
-.title a {
-    text-decoration: none;
-}
+    .productsList {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Espacio entre los productos */
+    }
 
-.title h1 {
-    color: white !important;
-}
-.menu-items ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    .product {
+        display: flex; /* Para colocar la imagen y la información en fila */
+        background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+        border-radius: 10px;
+        overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
+    }
 
-.menu-items li {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 24px;
-    margin: 20px;
-}
+    .product-info {
+        flex: 1; /* El texto ocupa el espacio restante */
+        padding: 20px; /* Espaciado interno */
+    }
 
-.menu-items li a {
-    text-decoration: none;
-    color: white !important;
-} */
-/* FIN HEADER */
+    .product-image {
+        flex-shrink: 0; /* No se encogerá si el contenido es más pequeño */
+        width: 150px; /* Ancho de la imagen */
+        height: 150px; /* Altura de la imagen */
+        overflow: hidden; /* Para manejar imágenes más grandes */
+    }
 
-/* LLISTAT PRODUCTES */
-.product-section {
-    width: 75%;
-    margin: 0 auto;
-}
-.productsList {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-.productsList .product {
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    border-radius: 10px;
-    position: relative;
-}
-.productsList .product img {
-    max-width: 100px;
-}
-/* FI LLISTAT PRODUCTES */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    border-radius: 10px;
-}
+    .product-image img {
+        width: 100%; /* Ajusta la imagen al contenedor */
+        height: 100%; /* Ajusta la imagen al contenedor */
+        object-fit: cover; /* Ajusta el tamaño de la imagen */
+    }
 
-.agregar {
-    background-color: #4caf50; /* Verde */
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    top: 8%;
-    position: absolute;
-    right: 23.5%;
-}
+    .agregar {
+        background-color: #4caf50; /* Verde */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-input[type="text"],
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-input[type="submit"] {
-    background-color: #4caf50; /* Verde */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    input[type="submit"] {
+        background-color: #4caf50; /* Verde */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-input[type="submit"]:hover {
-    background-color: #45a049; /* Verde más oscuro */
-}
+    input[type="submit"]:hover {
+        background-color: #45a049; /* Verde más oscuro */
+    }
 
-.veure {
-    background-color: green; /* Rojo */
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 16%;
-    flex-direction: row;
-    display: flex;
-    gap: 5px;
-}
+    .veure {
+        background-color: green; /* Rojo */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 25%;
+        flex-direction: row;
+        display: flex;
+        gap: 5px;
+    }
 
-.veure img {
-    width: 20px;
-    height: 20px;
-}
+    .veure img {
+        width: 20px;
+        height: 20px;
+    }
 
-.editar img {
-    width: 20px;
-    height: 20px;
-}
+    .editar img {
+        width: 20px;
+        height: 20px;
+    }
 
-.editar {
-    background-color: rgb(102, 102, 247); /* Rojo */
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 16%;
-    flex-direction: row;
-    display: flex;
-    gap: 5px;
-}
+    .editar {
+        background-color: rgb(102, 102, 247); /* Rojo */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 20%;
+        flex-direction: row;
+        display: flex;
+        gap: 5px;
+    }
 
-.eliminar img {
-    width: 20px;
-    height: 20px;
-}
+    .eliminar img {
+        width: 20px;
+        height: 20px;
+    }
 
-.buttonContainer {
-    display: flex;
-    width: 100%;
-}
+    .buttonContainer {
+        width: 100%;
+        display: flex;
+    }
 
-.eliminar {
-    background-color: red;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 16%;
-    flex-direction: row;
-    display: flex;
-    gap: 5px;
-}
+    .eliminar {
+        background-color: red; /* Rojo */
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 25%;
+        flex-direction: row;
+        display: flex;
+        gap: 5px;
+    }
 
-.file-upload {
-    position: relative;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #b4b4b4;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 20%;
-}
+    .file-upload {
+        position: relative;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #b4b4b4;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 50%;
+        margin-left:23%;
+    }
 
-.file-label {
-    font-size: 16px;
-    display: inline-block;
-}
+    .file-label {
+        font-size: 16px;
+        display: inline-block;
+    }
 
-.file-upload input[type="file"] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-}
+    .file-upload input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+
+    .formBottons {
+        display: flex;
+    }
+
+    .container {
+        width: 40%;
+        margin-left: 30%;
+        text-align: center;
+    }
+    .container h2 {
+        text-align: center;
+    }
