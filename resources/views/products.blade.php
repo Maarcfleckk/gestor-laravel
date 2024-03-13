@@ -29,7 +29,7 @@
                 <p class="desc">{{ $producte->descripcio }}</p>
                 <p class="preu">Preu: {{ $producte->preu }} €</p>
                 <p class="estock">Estoc: {{ $producte->estoc }}</p>
-                <img src="{{ asset('storage/'.$producte->imagen.'') }}" alt="Imagen del producto"> <!-- Mostrar la imagen del producto -->
+                <img src="{{ $producte->imagen }}" alt="Imagen del producto"> <!-- Mostrar la imagen del producto -->
                 <div class="buttonContainer">
                     <a class="veure" href="{{ route('productes.show', ['producte' => $producte->id]) }}">
                         <img src="{{ asset('/images/eye-solid.svg')}}" alt="Icono de ojo">Veure més
