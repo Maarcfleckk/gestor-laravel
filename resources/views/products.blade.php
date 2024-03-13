@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="product-image">
-                <img src="{{ asset('storage/'.$producte->imagen.'') }}" alt="Imagen del producto">
+                <img src="{{ $producte->imagen }}" alt="Imagen del producto"> <!-- Mostrar la imagen del producto -->
             </div>
             </div>
             @endforeach
