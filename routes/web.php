@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Producte;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,16 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function(){
+    $productes = Producte::all();
     return view('home');
 });
 
 Route::resource('productes', ProductController::class);
 Route::get('create', [ProductController::class, 'create']);
 Route::post('store', [ProductController::class, 'store'])->name('store');
+Route::get('productes/{id}', [ProductController::class, 'show']);
+Route::get('productes/{id}/edit', [ProductController::class, 'edit'])->name('productes.edit');
+Route::put('productes/{id}', [ProductController::class, 'update'])->name('productes.update');
+Route::delete('productes/{id}', [ProductController::class, 'destroy'])->name('productes.destroy');
+Route::get('productes/{id}/edit', [ProductController::class, 'edit'])->name('productes.edit');
+Route::put('productes/{id}', [ProductController::class, 'update'])->name('productes.update');

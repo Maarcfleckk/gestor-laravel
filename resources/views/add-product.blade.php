@@ -8,9 +8,20 @@
     <title>Afegir producte</title>
 </head>
 <body>
+    <header>
+        <div class="headerContainer">
+            <nav class="navBar">
+                <ul class="navBarList">
+                    <li class="listItem"><a href="{{ route('productes.index') }}">Productes</a></li>
+                    <li class="listItem"><a href="{{ url('/') }}"><h1 class="title">Inici</h1></a></li>
+                    <li class="listItem"><a href="{{ route('productes.create') }}">Afegir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="container">
-        <h1>Afegir Nou Producte</h1>
-        <form action="{{route('store')}}" method="post">
+        <h2>Afegir Nou Producte</h2>
+        <form action="{{ route('store') }}" method="post" enctype="multipart/form-data" class="form-add">
             @csrf
             <div>
                 <label for="nombre">Nom:</label>
@@ -27,6 +38,10 @@
             <div>
                 <label for="stock">Stock:</label>
                 <input type="number" id="stock" name="stock" min="0" required>
+            </div>
+            <div class="file-upload">
+                <label for="imagen" class="file-label">Seleccionar Imagen</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
             </div>
             <input type="submit" value="Añadir Producto">
         </form>
